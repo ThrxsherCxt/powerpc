@@ -1,6 +1,6 @@
 
 -- CREACION DEL ESQUEMA
-CREATE DATABASE `powerpc` DEFAULT CHARSET=utf8mb4;
+CREATE DATABASE IF NOT EXISTS `powerpc` DEFAULT CHARSET=utf8mb4;
 USE `powerpc`;
 
 -- CREACION DE TABLA DE CATEGORIAS
@@ -58,7 +58,6 @@ ALTER TABLE `products`
 ADD COLUMN `views` INT NOT NULL DEFAULT 0 AFTER `price`;
 
 -- CREACION DE VISTA DE PRODUCTOS ORDENADOS POR MEJOR CALIFICACION, JUNTO A SUS COMENTARIOS AGRUPADOS
-DELIMITER //
 CREATE VIEW `products_reviews` AS
     SELECT 
         reviews.product_id,
@@ -86,11 +85,10 @@ CREATE VIEW `products_reviews` AS
         GROUP BY product_id
         ORDER BY AVG(RATE) DESC) reviews ON reviews.product_id = products.id
     ORDER BY average DESC;
-DELIMITER ;
 
 -- CREACION DE TRIGGER PARA LOS NUEVOS REGISTROS EN LA TABLA DE PRODUCTOS
 DELIMITER //
-CREATE DEFINER = CURRENT_USER TRIGGER `products_insert_metainfo` AFTER INSERT ON `products` FOR EACH ROW
+CREATE TRIGGER `products_insert_metainfo` AFTER INSERT ON `products` FOR EACH ROW
 BEGIN
 
     INSERT INTO metainfo (product_id)
@@ -115,7 +113,6 @@ END //
 DELIMITER ;
 
 -- CREACION DE VISTA DE PRODUCTOS ALEATORIOS CORRESPONDIENTES A UNA CATEGORIA ALEATORIA, JUNTO A LOS PAGOS POR MES DE 6 Y 12 MENSUALIDADES
-DELIMITER //
 CREATE VIEW `random_products` AS
     SELECT 
         products.id,
@@ -141,4 +138,3 @@ CREATE VIEW `random_products` AS
         LIMIT 1) categories ON categories.id = products.category_id
     ORDER BY RAND()
     LIMIT 10;
-DELIMITER ;

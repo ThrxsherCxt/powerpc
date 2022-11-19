@@ -6,7 +6,7 @@ define('DB_PASS', '');
 define('DB_NAME', 'powerpc');
 
 // App Root
-define('APPROOT', dirname(dirname(__FILE__)).'/php');
+define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
 define('URLROOT', 'http://localhost/powerpc');
 // Nombre del sitio

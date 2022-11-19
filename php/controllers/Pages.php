@@ -6,7 +6,14 @@ class Pages extends Controller {
     }
 
     public function index() {
-        $this->view('pages/index');
+        $this->view('index');
+    }
+
+    public function mas_vendidos() {
+        $this->view('productos/mas_vendidos');
+    }
+    public function destacados() {
+        $this->view('productos/destacados');
     }
 
 }
