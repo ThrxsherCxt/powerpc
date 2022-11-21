@@ -43,14 +43,6 @@ $products = $resultProducts->results;
 
 foreach ($products as $product) {
 
-    // echo $product->id . '<br>';
-    // echo $product->title . '<br>';
-    // echo 'http://http2.mlstatic.com/D_' . $product->thumbnail_id . '-O.jpg<br>';
-    // echo $product->price.'<br>';
-    // echo rand(0, 10000).'<br>';
-    // echo $category.'<br>';
-    // echo $product->catalog_product_id.'<br>';
-
     $productDescription = "";
     $productSpecifications = "<h3>Especificaciones</h3>";
 
