@@ -53,7 +53,7 @@ foreach ($products as $product) {
 
     $attributes = $product->attributes;
     foreach ($attributes as $attribute) {
-        $productSpecifications .= $attribute->name . ': ' . $attribute->value_name . '<br>';
+        $productSpecifications .= '<b>'.$attribute->name .'</b> : ' . $attribute->value_name . '<br>';
     }
 
     $txt = "INSERT INTO products (id, name, description, price, views, image, category_id) VALUES ('$product->id', '".addslashes($product->title)."', '".addslashes($productDescription.$productSpecifications)."', $product->price," . rand(0, 10000) . ", 'http://http2.mlstatic.com/D_$product->thumbnail_id-O.jpg', '$category');\n";

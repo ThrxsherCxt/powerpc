@@ -32,5 +32,20 @@ class Category {
 
         return $results;
     }
+    
+    public function getCategoryName($id){
+        $this->db->query('SELECT 
+                            name
+                        FROM
+                            categories
+                        WHERE
+                            id = :id;');
+
+        $this->db->bind(':id', $id);
+        $results = $this->db->resultSet();
+
+        return $results;
+        
+    }
 
 }

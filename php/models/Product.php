@@ -1,4 +1,4 @@
-<?php
+    <?php
 class Product {
     private $db;
 
@@ -20,10 +20,11 @@ class Product {
                             products
                                 LEFT JOIN
                             products_reviews ON products_reviews.product_id = products.id
-                        ORDER BY average DESC , RAND()
+                        ORDER BY RAND()
                         LIMIT 10;');
 
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -41,10 +42,11 @@ class Product {
                             products
                                 LEFT JOIN
                             products_reviews ON products_reviews.product_id = products.id
-                        ORDER BY average DESC , RAND()
+                        ORDER BY RAND()
                         LIMIT 50;');
 
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -61,6 +63,7 @@ class Product {
                         LIMIT 10;');
 
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -76,6 +79,7 @@ class Product {
                         LIMIT 50;');
 
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -91,13 +95,28 @@ class Product {
         $this->db->bind(':category_id', $data['category_id']);
 
         if ($this->db->execute()) {
+            $this->db->close();
             return true;
         } else {
+            $this->db->close();
+            return false;
+        }
+    }
+    public function updateMetainfo($id) {
+        $this->db->query('CALL updateMetainfo(:id);');
+        $this->db->bind(':id', $id);
+
+        if ($this->db->execute()) {
+            $this->db->close();
+            return true;
+        } else {
+            $this->db->close();
             return false;
         }
     }
 
     public function getProductById($id) {
+        $this->updateMetainfo($id);
         $this->db->query('SELECT 
                             products.id AS product_id,
                             products.name AS product_name,
@@ -117,6 +136,7 @@ class Product {
 
         $this->db->bind(':id', $id);
         $row = $this->db->single();
+        $this->db->close();
 
         return $row;
     }
@@ -138,6 +158,7 @@ class Product {
 
         $this->db->bind(':id', $category);
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -160,6 +181,18 @@ class Product {
 
         $this->db->bind(':search', '%'.$word.'%');
         $results = $this->db->resultSet();
+        $this->db->close();
+
+        return $results;
+    }
+
+    public function monthlyPayment($id, $months) {
+        $this->db->query('CALL powerpc.calc_monthly_payments(:id, :months);');
+        $this->db->bind(':id', $id);
+        $this->db->bind(':months', $months);
+
+        $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }

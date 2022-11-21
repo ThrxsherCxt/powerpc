@@ -8,8 +8,8 @@ class Controller {
     }
 
     public function view($view, $data = []) {
-        if (file_exists('../public_html/views/' . $view . '.php')) {
-            require_once '../public_html/views/' . $view . '.php';
+        if (file_exists('../php/views/' . $view . '.php')) {
+            require_once '../php/views/' . $view . '.php';
         } else {
             die('La vista no existe.');
         }

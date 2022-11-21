@@ -65,4 +65,8 @@ class Database {
     public function rowCount() {
         return $this->stmt->rowCount();
     }
+
+    public function close(){
+        return $this->stmt->closeCursor();
+    }
 }
