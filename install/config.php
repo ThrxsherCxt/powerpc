@@ -8,6 +8,6 @@ define('DB_NAME', 'powerpc');
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
-define('URLROOT', 'http://localhost/powerpc');
+define('URLROOT', 'http://'. $_SERVER['HTTP_HOST'] .'/powerpc');
 // Nombre del sitio
-define('SITENAME', 'PowerPC');
+define('SITENAME', 'Power PC');

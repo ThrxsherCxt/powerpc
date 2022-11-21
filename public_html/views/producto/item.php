@@ -1,1 +1,0 @@
-<?php require APPROOT."/public_html/views/common/navbar.php"; ?>
