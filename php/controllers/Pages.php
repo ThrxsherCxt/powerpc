@@ -33,13 +33,13 @@ class Pages extends Controller {
 
 
                 $id = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
-                
+
                 $product = $this->productsModel->getProductById($id);
                 $sixPayments = $this->productsModel->monthlyPayment($id, 6);
                 $twelvePayments = $this->productsModel->monthlyPayment($id, 12);
                 $reviews = $this->reviewsModel->getReviews($id);
                 $random_products = $this->productsModel->getIndexRandomProducts();
-                
+
                 $data = [
                     'product' => $product,
                     'sixPayments' => $sixPayments,
@@ -47,10 +47,10 @@ class Pages extends Controller {
                     'reviews' => $reviews,
                     'random_products' => $random_products
                 ];
-                
+
                 $this->view('producto/index', $data);
-                
-            } else if(str_contains($_SERVER['REQUEST_URI'], 'categoria')){
+
+            } else if (str_contains($_SERVER['REQUEST_URI'], 'categoria')) {
 
                 $id = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
                 $products = $this->productsModel->getProductsByCategory($id);
@@ -90,23 +90,23 @@ class Pages extends Controller {
         $this->view('productos/destacados', $data);
     }
 
-    public function navbar(){
-        
+    public function navbar() {
+
         $parent_categories = $this->categoriesModel->getParentCategories();
 
         $categories = [];
 
-        foreach($parent_categories as $key => $parent_category){
+        foreach ($parent_categories as $key => $parent_category) {
             array_push($categories, $parent_category);
             $children_categories = $this->categoriesModel->getChildCategories($parent_category->id);
 
-            foreach($children_categories as $keyC => $children_category){
+            foreach ($children_categories as $keyC => $children_category) {
                 $categories[$key]->children[$keyC] = $children_category;
             }
 
         }
 
-        define('CATEGORIES', $categories);;
+        define('CATEGORIES', $categories);
 
     }
 

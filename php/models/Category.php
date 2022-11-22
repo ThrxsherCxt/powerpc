@@ -15,6 +15,7 @@ class Category {
                             parent_id IS NULL;');
 
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
@@ -29,11 +30,12 @@ class Category {
 
         $this->db->bind(':id', $parent_id);
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
     }
-    
-    public function getCategoryName($id){
+
+    public function getCategoryName($id) {
         $this->db->query('SELECT 
                             name
                         FROM
@@ -43,9 +45,10 @@ class Category {
 
         $this->db->bind(':id', $id);
         $results = $this->db->resultSet();
+        $this->db->close();
 
         return $results;
-        
+
     }
 
 }

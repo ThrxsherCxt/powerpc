@@ -17,42 +17,42 @@
                         <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
                     </div>
 
-
                     <ul class="menu-section">
                         <li><a href="<?php echo URLROOT; ?>">Inicio</a></li>
                         <li class="menu-item-has-children">
                             <a href="#">Categorías <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-mega menu-column-4">
 
-                            <?php foreach(CATEGORIES as $category):  ?>
+                                <?php foreach (CATEGORIES as $category): ?>
 
                                 <div class="list-item">
 
-                                <h4 class="title">
-                                    <a href="<?php echo URLROOT; ?>/categoria/<?php echo $category->id; ?>">
-                                        <?php echo $category->name; ?>
-                                    </a>
-                                </h4>
+                                    <h4 class="title">
+                                        <a href="<?php echo URLROOT; ?>/categoria/<?php echo $category->id; ?>">
+                                            <?php echo $category->name; ?>
+                                        </a>
+                                    </h4>
 
-                                <?php if(isset($category->children)){ ?>
+                                    <?php if (isset($category->children)) { ?>
 
                                     <ul>
-                                    <?php foreach($category->children as $category_children):  ?>
+                                        <?php foreach ($category->children as $category_children): ?>
                                         <li>
-                                            <a href="<?php echo URLROOT; ?>/categoria/<?php echo $category_children->id; ?>"><?php echo $category_children->name; ?></a>
+                                            <a
+                                                href="<?php echo URLROOT; ?>/categoria/<?php echo $category_children->id; ?>">
+                                                <?php echo $category_children->name; ?>
+                                            </a>
                                         </li>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
 
-                                </ul>
+                                    </ul>
 
-                               <?php }  ?>
+                                    <?php } ?>
 
-
-
-                                </div> 
+                                </div>
 
                                 <?php endforeach; ?>
-                                
+
                             </div>
                         </li>
                         <li><a href="<?php echo URLROOT; ?>/productos/destacados">Destacados</a></li>
@@ -61,7 +61,6 @@
                     </ul>
                 </nav>
             </div>
-
 
             <div class="header-item-right">
                 <a href="#" class="menu-icon"><i class="ion ion-md-search"></i></a>

@@ -30,14 +30,13 @@ class Installer extends Controller {
 
     function doQueries($category) {
 
-        $txt = "";
-
-        $resultProducts = $this->callAPI('https://api.mercadolibre.com/sites/MLM/search?category=' . $category . '&&has_pictures=true&limit=30');
+        $resultProducts = $this->callAPI('https://api.mercadolibre.com/sites/MLM/search?category=' . $category . '&has_pictures=true&limit=15');
 
         $products = $resultProducts->results;
 
         foreach ($products as $product) {
 
+            $data = [];
             $productDescription = "";
             $productSpecifications = "<h3>Especificaciones</h3>";
 
@@ -51,10 +50,18 @@ class Installer extends Controller {
                 $productSpecifications .= '<b>' . $attribute->name . '</b> : ' . $attribute->value_name . '<br>';
             }
 
-            $txt.= "INSERT IGNORE INTO products (id, name, description, price, views, image, category_id) VALUES ('$product->id', '" . addslashes($product->title) . "', '" . addslashes($productDescription . $productSpecifications) . "', $product->price," . rand(0, 10000) . ", 'http://http2.mlstatic.com/D_$product->thumbnail_id-O.jpg', '$category');\n";
+            $data['id'] = $product->id;
+            $data['name'] = addslashes($product->title);
+            $data['description'] = addslashes($productDescription . $productSpecifications);
+            $data['price'] = $product->price;
+            $data['views'] = rand(0, 10000);
+            $data['image'] = 'http://http2.mlstatic.com/D_' . $product->thumbnail_id . '-O.jpg';
+            $data['category_id'] = $category;
 
+            $this->productsModel->addProduct($data);
 
             do {
+                $dataResult = [];
                 $resultReviews = $this->callAPI('https://api.mercadolibre.com/reviews/item/' . $product->id);
 
                 if (isset($resultReviews->status)) {
@@ -63,18 +70,23 @@ class Installer extends Controller {
                     $status = 'OK';
                     $reviews = $resultReviews->reviews;
                     foreach ($reviews as $review) {
-                        $txt.= "INSERT IGNORE INTO reviews (name, text, rate, product_id) VALUES ('" . addslashes($review->title) . "', '" . addslashes($review->content) . "', $review->rate, '$product->id');\n";
+                        $dataResult['name'] = addslashes($review->title);
+                        $dataResult['text'] = addslashes($review->content);
+                        $dataResult['rate'] = $review->rate;
+                        $dataResult['product_id'] = $product->id;
+
+                        $this->reviewsModel->setReview($dataResult);
                     }
                 }
             } while ($status === 409);
 
         }
 
-        echo $txt;
-
     }
 
     public function getData() {
+
+        echo "<h3>Por favor, no cierres esta ventana hasta que el script finalice.</h3>";
 
         $parent_categories = $this->categoriesModel->getParentCategories();
 
@@ -90,9 +102,11 @@ class Installer extends Controller {
                 $this->doQueries($children_category->id);
             }
 
-            echo "-- ". $key + 1 ."de $total categorias principales cargadas.<br><br>";
+            echo '<h4>'.$key + 1 . " de $total categorias principales cargadas.</h4><br><br>";
 
         }
+
+        echo "<b>Carga finalizada.</b>";
 
     }
 }

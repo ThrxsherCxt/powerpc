@@ -6,14 +6,6 @@
         ENVÍOS GRATIS EN TODA LA TIENDA
     </div>
 
-    <!-- <div class="breadcrumb-container">
-        <ul class="breadcrumb">
-            <li><a href="#">Computación</a></li>
-            <li>Discos Duros</li>
-        </ul>
-
-    </div> -->
-
     <div class="item-card">
         <div class="item-image-container">
             <img src="<?php echo $data['product']->product_image; ?>"
@@ -58,7 +50,9 @@
                 ?>
             </div>
             <div class="item-review-title">
-                <b><?php echo $review->name; ?></b>
+                <b>
+                    <?php echo $review->name; ?>
+                </b>
             </div>
             <div class="item-review-description">
                 <?php echo $review->text; ?>

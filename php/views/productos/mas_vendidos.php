@@ -5,6 +5,10 @@
         ENVÍOS GRATIS EN TODA LA TIENDA
     </div>
 
+    <div class="banner-buen-fin">
+        <img src=" <?php echo URLROOT . "/assets/img/Banner_buen_fin.jpg"; ?>">
+    </div>
+
     <div class="buen-fin-title">
         <div>MÁS VENDIDOS</div>
     </div>
@@ -27,8 +31,8 @@
                 </div>
                 <div class="rating">
                     <?php for ($i = 0; $i < $product->product_rating; $i++) {
-        echo "&#9733";
-    } ?>
+                echo "&#9733";
+            } ?>
                 </div>
             </div>
         </a>
