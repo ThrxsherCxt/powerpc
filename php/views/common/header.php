@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.6.3/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.6.3/css/ionicons.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/assets/css/reset.min.css">
     <script defer src="<?php echo URLROOT; ?>/assets/js/script.js"></script>

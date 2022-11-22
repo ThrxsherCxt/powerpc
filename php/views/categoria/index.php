@@ -10,7 +10,9 @@
     </div>
 
     <div class="buen-fin-title">
-        <div><?php echo $data['category_name'][0]->name; ?></div>
+        <div>
+            <?php echo $data['category_name'][0]->name; ?>
+        </div>
     </div>
 
     <div class="product-container-multi">
@@ -31,8 +33,8 @@
                 </div>
                 <div class="rating">
                     <?php for ($i = 0; $i < $product->product_rating; $i++) {
-        echo "&#9733";
-    } ?>
+                echo "&#9733";
+            } ?>
                 </div>
             </div>
         </a>

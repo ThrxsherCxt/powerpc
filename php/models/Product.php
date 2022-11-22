@@ -1,4 +1,4 @@
-    <?php
+<?php
 class Product {
     private $db;
 
@@ -85,9 +85,10 @@ class Product {
     }
 
     public function addProduct($data) {
-        $this->db->query("INSERT INTO products (id, name, description, price, views, image, category_id) VALUES (:id, :description, :price, :views, :image, :category_id);");
+        $this->db->query("INSERT IGNORE INTO products (id, name, description, price, views, image, category_id) VALUES (:id, :name, :description, :price, :views, :image, :category_id);");
 
         $this->db->bind(':id', $data['id']);
+        $this->db->bind(':name', $data['name']);
         $this->db->bind(':description', $data['description']);
         $this->db->bind(':price', $data['price']);
         $this->db->bind(':views', $data['views']);
@@ -179,7 +180,7 @@ class Product {
                         products_reviews ON products_reviews.product_id = products.id
                     WHERE products.name LIKE :search;');
 
-        $this->db->bind(':search', '%'.$word.'%');
+        $this->db->bind(':search', '%' . $word . '%');
         $results = $this->db->resultSet();
         $this->db->close();
 

@@ -10,13 +10,13 @@
             <h3>Enlaces rápidos</h3>
             <div class="border-footer-list"></div>
             <ul>
-                <a href="#">
+                <a href="<?php echo URLROOT; ?>">
                     <li>Inicio</li>
                 </a>
-                <a href="#">
+                <a href="<?php echo URLROOT . '/productos/destacados'; ?>">
                     <li>Destacados</li>
                 </a>
-                <a href="#">
+                <a href="<?php echo URLROOT . '/productos/mas_vendidos'; ?>">
                     <li>Más Vendidos</li>
                 </a>
                 <a href="#">
@@ -29,17 +29,17 @@
             <h3>Categorías destacadas</h3>
             <div class="border-footer-list"></div>
             <ul>
-                <a href="#">
-                    <li>Laptops y accesorios</li>
+                <a href="<?php echo URLROOT . '/categoria/MLM1655'; ?>">
+                    <li>Monitores y Accesorios</li>
                 </a>
-                <a href="#">
-                    <li>Laptops y accesorios</li>
+                <a href="<?php echo URLROOT . '/categoria/MLM1691'; ?>">
+                    <li>Componentes de PC</li>
                 </a>
-                <a href="#">
-                    <li>Laptops y accesorios</li>
+                <a href="<?php echo URLROOT . '/categoria/MLM1723'; ?>">
+                    <li>Software</li>
                 </a>
-                <a href="#">
-                    <li>Laptops y accesorios</li>
+                <a href="<?php echo URLROOT . '/categoria/MLM182456'; ?>">
+                    <li>Tablets y Accesorios</li>
                 </a>
             </ul>
         </div>

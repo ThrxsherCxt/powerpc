@@ -114,6 +114,30 @@ USE `powerpc`; -- Tenemos que seleccionar el esquema a utilizar
 Una vez configurado el archivo, ejecutamos el script SQL en nuestro gestor de base de datos favorito, en mi caso utilicé MySQL Workbench.<br><br>
 <b>NOTA:<b> En mi caso no me dejó importar el script de SQl directamente, si no que tuve abrirlo como una hoja de trabajo, seleccionar tod el código y ejecutarlo.
 
+<br>
+<h1>Correr Script de creación de datos</h1>
+Iremos a la siguiente ruta en el navegador
+
+```bash
+  http://localhost/powerpc/install/
+```
+
+La página se quedará en este estado por varios minutos <br>
+
+<img src="public_html\assets\img\readme\loading.png" />
+<br>
+
+<strong>ESTO ES TOTALMENTE NORMAL, TARDARÁ MÁS DE 10 MINUTOS. NO CIERRES LA PESTAÑA O EL NAVEGADOR.</strong>
+
+Al finalizar, imprimirá una serie de mensajes, como son los siguientes
+<br>
+
+
+<img src="public_html\assets\img\readme\Captura de pantalla (3).png" />
+<img src="public_html\assets\img\readme\Captura de pantalla (4).png" />
+
+Cuando encuentres el mensaje de Carga finalizada, significa que el script se ejecutó correctamente. Puedes revisar en la base de datos para comprobar los registros agregados. Ahora si puedes cerrar la pestaña o el navegador.
+
 ## <h1>Tareas pendientes por realizar</h1>
 
 <h2>Creación de la base de datos</h2>
@@ -131,4 +155,56 @@ listados, tanto destacados como de más vendidos filtrados por la categoría sel
 
 * &#10060; Generar el log de Instalación: realicé una prueba, sin embargo por el tiempo ya no me fue suficiente implementarlo como me hubiera gustado.
 
-* &#10067; <b>EN CURSO: </b>El Script para generar los productos y los comentarios require un tiempo considerable de prueba, ya se logró obtener la información, sin embargo aún falta la parte para hacer los Insert a la base de datos. Estimo que en unas horas más estará resuelto el issue.
+<br>
+
+## <h1>Capturas de pantalla</h1>
+<h2>Desktop</h2>
+
+<h4>* Inicio</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_.png" width="800"/><br>
+<img src="public_html\assets\img\readme\localhost_powerpc_ (2).png" width="800" /><br>
+<h4>* Menú de categorías</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_ (1).png" width="800" /><br>
+
+<h4>* Destacados</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_productos_destacados.png" width="800" /><br>
+
+<h4>* Categoría</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_categoria_MLM1691.png" width="800" /><br>
+
+<h4>* Producto</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM1427771667.png" width="800" /><br>
+
+<h4>* Reseñas</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM1427771667 (1).png" width="800" /><br>
+
+<h4>* Recomendaciones</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM1427771667 (2).png" width="800" /><br>
+
+
+<h2>Mobile</h2>
+
+<div align="center">
+
+
+
+<h4>Inicio</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_(Nexus 5X) (1).png" width="350"/><br>
+<h4>Menú</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_(Nexus 5X) (2).png"  width="350"/><br>
+<h4>Menú de categorías</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_(Nexus 5X) (3).png"  width="350"/><br>
+
+<h4>Producto</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM914418073(Nexus 5X).png" width="350"/><br>
+
+<h4>Especificaciones y Reseñas</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM914418073(Nexus 5X) (1).png" width="350"/><br>
+
+<h4>Recomendaciones</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM914418073(Nexus 5X) (2).png" width="350"/><br>
+
+<h4>Pie de Página</h4>
+<img src="public_html\assets\img\readme\localhost_powerpc_producto_MLM914418073(Nexus 5X) (3).png" width="350"/><br>
+
+</div>

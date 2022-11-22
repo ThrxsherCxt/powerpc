@@ -735,9 +735,9 @@ video {
     padding: 20px !important;
   }
 
-  .item-description-reviews{
+  .item-description-reviews {
     width: 100% !important;
-    padding:5px 20px 5px 20px!important;
+    padding: 5px 20px 5px 20px !important;
   }
 
   .item-description>.item-buy {
@@ -750,8 +750,8 @@ video {
     margin: 20px 0px 10px 20px !important;
   }
 
-  .reviews-container{
-    margin: 0 0 10px 20px!important;
+  .reviews-container {
+    margin: 0 0 10px 20px !important;
   }
 
 }
@@ -855,21 +855,24 @@ video {
   margin-right: 40px;
   background-color: white;
 }
-.product-card-multi{
+
+.product-card-multi {
   vertical-align: top;
   cursor: pointer;
-  display:inline-block;
+  display: inline-block;
   width: 20vh;
   height: 31vh;
   margin: 10px;
   background-color: white;
 }
 
-.product-card:hover, .product-card-multi:hover {
+.product-card:hover,
+.product-card-multi:hover {
   filter: brightness(97%);
 }
 
-.product-card:active, .product-card-multi:active {
+.product-card:active,
+.product-card-multi:active {
   filter: brightness(90%);
 }
 
@@ -995,7 +998,7 @@ video {
   margin: 20px auto;
 }
 
-.see-all-div> a >.see-all-btn {
+.see-all-div>a>.see-all-btn {
   margin: auto;
   width: 150px;
   text-align: center;
@@ -1005,22 +1008,22 @@ video {
   background-color: white;
 }
 
-.see-all-div> a >.see-all-btn:hover {
+.see-all-div>a>.see-all-btn:hover {
   filter: brightness(90%);
 }
 
-.see-all-div> a >.see-all-btn:active {
+.see-all-div>a>.see-all-btn:active {
   filter: brightness(85%);
 }
 
-.see-all-div> a >.see-all-btn {
+.see-all-div>a>.see-all-btn {
   appearance: button;
   font-weight: 500;
 }
 
 footer {
   bottom: 0;
-  margin-bottom:0;
+  margin-top: 50px;
   width: 100%;
   background: #121212;
   display: block;
@@ -1208,8 +1211,8 @@ ul.breadcrumb li a:hover {
   height: auto;
 }
 
-.item-description-reviews{
-  width:100%;
+.item-description-reviews {
+  width: 100%;
 
 }
 
@@ -1230,7 +1233,8 @@ ul.breadcrumb li a:hover {
   font-weight: 500;
 }
 
-.item-description>.item-stars, .item-description-reviews > .item-stars {
+.item-description>.item-stars,
+.item-description-reviews>.item-stars {
   font-size: 3.5vh;
   color: goldenrod;
   font-weight: 500;
@@ -1270,19 +1274,19 @@ b {
   border-radius: 5px;
 }
 
-.recommendations{
-  margin:40px 0 10px 0;
+.recommendations {
+  margin: 40px 0 10px 0;
 }
 
 .reviews-container {
   margin: 20px 0 0 0;
 }
 
-hr{
-  margin:5px 10px 5px 10px;
-  border-top:1px #f5f5f5;
+hr {
+  margin: 5px 10px 5px 10px;
+  border-top: 1px #f5f5f5;
 }
 
-.item-review-description{
-  margin-top:10px;
-} 
+.item-review-description {
+  margin-top: 10px;
+}
