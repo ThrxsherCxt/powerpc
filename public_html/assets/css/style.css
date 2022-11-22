@@ -1019,7 +1019,8 @@ video {
 }
 
 footer {
-  margin-top: 50px;
+  bottom: 0;
+  margin-bottom:0;
   width: 100%;
   background: #121212;
   display: block;
