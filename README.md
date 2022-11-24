@@ -140,9 +140,6 @@ Cuando encuentres el mensaje de Carga finalizada, significa que el script se eje
 
 ## <h1>Tareas pendientes por realizar</h1>
 
-<h2>Creación de la base de datos</h2>
-
-
 <h3>Considero que son áreas de oportunidad en dónde se pueden afinar detalles, ya que se tiene que considerar que en ocasiones la planeación llega a fallar y toma más tiempo de lo estimado.</h3>
 <br>
 
