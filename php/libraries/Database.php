@@ -67,6 +67,10 @@ class Database {
         return $this->stmt->rowCount();
     }
 
+    public function insertedID(){
+        return $this->dbh->lastInsertId();
+    }
+
     public function close() {
         return $this->stmt->closeCursor();
     }

@@ -1,4 +1,4 @@
-<?php include APPROOT . "/php/views/common/header.php"; ?>
+<?php include APPROOT . "/public_html/views/common/header.php"; ?>
 <div class="main">
 
     <div class="promotional">
@@ -10,14 +10,12 @@
     </div>
 
     <div class="buen-fin-title">
-        <div>
-            <?php echo $data['category_name'][0]->name; ?>
-        </div>
+        <div>MÁS VENDIDOS</div>
     </div>
 
     <div class="product-container-multi">
 
-        <?php foreach ($data['products'] as $product): ?>
+        <?php foreach ($data['best_rating'] as $product): ?>
 
         <a class="product-card-multi" href="<?php echo URLROOT; ?>/producto/<?php echo $product->product_id; ?>">
             <div class="product-image">
@@ -44,4 +42,4 @@
     </div>
 
 </div>
-<?php include APPROOT . "/php/views/common/footer.php"; ?>
+<?php include APPROOT . "/public_html/views/common/footer.php"; ?>

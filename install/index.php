@@ -6,4 +6,4 @@ ini_set('max_execution_time', 0);
 include "Installer.php";
 
 $products = new Installer();
-$products->getData();
+$products->createProducts();
