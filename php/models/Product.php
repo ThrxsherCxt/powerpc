@@ -85,9 +85,8 @@ class Product {
     }
 
     public function addProduct($data) {
-        $this->db->query("INSERT IGNORE INTO products (id, name, description, price, views, image, category_id) VALUES (:id, :name, :description, :price, :views, :image, :category_id);");
+        $this->db->query("INSERT INTO products (name, description, price, views, image, category_id) VALUES (:name, :description, :price, :views, :image, :category_id);");
 
-        $this->db->bind(':id', $data['id']);
         $this->db->bind(':name', $data['name']);
         $this->db->bind(':description', $data['description']);
         $this->db->bind(':price', $data['price']);
@@ -97,12 +96,16 @@ class Product {
 
         if ($this->db->execute()) {
             $this->db->close();
-            return true;
+            return $this->db->insertedID();
         } else {
             $this->db->close();
             return false;
         }
     }
+
+    // public function lastProductID(){
+    //     return $this->db->insertedID();
+    // }
     public function updateMetainfo($id) {
         $this->db->query('CALL updateMetainfo(:id);');
         $this->db->bind(':id', $id);
