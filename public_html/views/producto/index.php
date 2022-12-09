@@ -1,4 +1,4 @@
-<?php include APPROOT . "/php/views/common/header.php"; ?>
+<?php include APPROOT . "/public_html/views/common/header.php"; ?>
 
 <div class="main">
 
@@ -100,4 +100,4 @@
     </div>
 </section>
 
-<?php include APPROOT . "/php/views/common/footer.php"; ?>
+<?php include APPROOT . "/public_html/views/common/footer.php"; ?>

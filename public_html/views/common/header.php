@@ -18,4 +18,4 @@
 </head>
 
 <body>
-    <?php require APPROOT . '/php/views/common/navbar.php'; ?>
+    <?php require APPROOT . '/public_html/views/common/navbar.php'; ?>
