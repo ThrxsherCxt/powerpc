@@ -7,7 +7,7 @@
 <div align="center">
   <h2><b>PROCESO DE SELECCIÓN</b><br></h2>
   <h3>Assessment de nivel de habilidades</h3>
-  <h3>Para desarrollador Full-Stack - Nivel AVANZADO</h3>
+  <h3>Para desarrollador Full-Stack - Nivel INTERMEDIO</h3>
 </div>
 <hr>
 
@@ -51,12 +51,14 @@
 <!-- Prerequisites -->
 ### Pre-requisitos
 
-Este proyecto necesita tener instalado alguna tecnología LAMP, MAMP o WAMP, de prefeerencia PHP versión 7.4 o superior. En mi caso utilicé XAMPP, el cuál se puede descargar del siguiente enlace:
+Este proyecto necesita tener instalado alguna tecnología LAMP, MAMP o WAMP, de prefeerencia PHP versión 7.4 o superior. En mi caso utilicé MAMP, el cuál se puede descargar del siguiente enlace:
 <br>
 
 ```bash
-https://www.apachefriends.org/es/
+https://www.mamp.info/en/
 ```
+Anteriormente habia utilizado WAMP, sin embargo desconocía que desde hace algunos años, habian cmbiado a MariaDB, por lo que decidi instalar MAMP y utiliza MySQL puro.
+<br>
 
 ### Instalación
 
@@ -70,7 +72,7 @@ No hace falta descargar más archivos, por lo que procedemos a configurar las va
 Poner la carpeta del proyecto en la estructura adecuada, en mi caso es la siguiente:
 
 ```bash
-  C:\xampp\htdocs\powerpc
+  C:\mamp\htdocs\powerpc
 ```
 
 Iniciar el servidor de Apache y MySQL, se pueden abrir desde el Centro de Control de XAMPP.
@@ -85,9 +87,10 @@ Necesitamos ajustar las variables de entorno, por lo que procederemos para empez
 Dentro de la ruta ajustaremos las siguientes variables de entorno
 
 ```php
-define('DB_HOST', 'localhost'); //Aquí colocamos nuestro hostname para la base de datos
+define('DB_HOST', 127.0.0.1); //Aquí colocamos nuestro hostname para la base de datos
+define('DB_PORT', 3306); // Aquí elegimos el puerto de nuestra base de datos
 define('DB_USER', 'root'); // Escribimos nuestro usuario de la base de datos
-define('DB_PASS', ''); // Ingresamos la contraseña en caso de contar con ella
+define('DB_PASS', 'root'); // Ingresamos la contraseña en caso de contar con ella
 define('DB_NAME', 'powerpc'); // Este es el nombre que lleva nuestro esquema de base de datos, en caso de necesitar cambiarlo, también se tendrá que modificar (más adelante se explica cómo)
 
 // App Root
@@ -122,21 +125,9 @@ Iremos a la siguiente ruta en el navegador
   http://localhost/powerpc/install/
 ```
 
-La página se quedará en este estado por varios minutos <br>
+La página se quedará cargando por unos segundos, posteriormente mostrará un mensaje que dice: <br><br><strong>Productos creados, ya puedes cerrar esta página.</strong><br>
 
-<img src="public_html\assets\img\readme\loading.png" />
-<br>
-
-<strong>ESTO ES TOTALMENTE NORMAL, TARDARÁ MÁS DE 10 MINUTOS. NO CIERRES LA PESTAÑA O EL NAVEGADOR.</strong>
-
-Al finalizar, imprimirá una serie de mensajes, como son los siguientes
-<br>
-
-
-<img src="public_html\assets\img\readme\Captura de pantalla (3).png" />
-<img src="public_html\assets\img\readme\Captura de pantalla (4).png" />
-
-Cuando encuentres el mensaje de Carga finalizada, significa que el script se ejecutó correctamente. Puedes revisar en la base de datos para comprobar los registros agregados. Ahora si puedes cerrar la pestaña o el navegador.
+Significa que el script se ejecutó correctamente. Puedes revisar en la base de datos para comprobar los registros agregados. Ahora si puedes cerrar la pestaña o el navegador.
 
 ## <h1>Tareas pendientes por realizar</h1>
 
