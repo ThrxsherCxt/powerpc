@@ -29,7 +29,7 @@ class Pages extends Controller {
 
         } else {
 
-            if (str_contains($_SERVER['REQUEST_URI'], 'producto')) {
+            if (strpos($_SERVER['REQUEST_URI'], 'producto') !== false) {
 
 
                 $id = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
@@ -50,7 +50,7 @@ class Pages extends Controller {
 
                 $this->view('producto/index', $data);
 
-            } else if (str_contains($_SERVER['REQUEST_URI'], 'categoria')) {
+            } else if (strpos($_SERVER['REQUEST_URI'], 'categoria') !== false) {
 
                 $id = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
                 $products = $this->productsModel->getProductsByCategory($id);
@@ -106,7 +106,7 @@ class Pages extends Controller {
 
         }
 
-        define('CATEGORIES', $categories);
+        define('CATEGORIES', serialize($categories));
 
     }
 

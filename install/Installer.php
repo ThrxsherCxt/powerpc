@@ -102,7 +102,7 @@ class Installer extends Controller {
                 $this->doQueries($children_category->id);
             }
 
-            echo '<h4>'.$key + 1 . " de $total categorias principales cargadas.</h4><br><br>";
+            echo '<h4>'. ($key + 1) . " de $total categorias principales cargadas.</h4><br><br>";
 
         }
 
@@ -110,9 +110,5 @@ class Installer extends Controller {
 
     }
 }
-
-
-
-
 
 ?>

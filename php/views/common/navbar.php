@@ -23,7 +23,7 @@
                             <a href="#">Categorías <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-mega menu-column-4">
 
-                                <?php foreach (CATEGORIES as $category): ?>
+                                <?php foreach (unserialize(CATEGORIES) as $category): ?>
 
                                 <div class="list-item">
 
